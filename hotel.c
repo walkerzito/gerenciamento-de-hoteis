@@ -14,9 +14,9 @@ struct no{
     struct no *prox;
 };
 
-typedef struct {
-    struct No * inicio;
-} Lista;
+struct lista {
+    struct no * inicio;
+};
 
 void lerCadastro(Hotel *c) {
   scanf("%s %s %s", &c->nome, c->localizacao, c->avaliacao);

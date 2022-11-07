@@ -23,14 +23,14 @@ void lerCadastro(Hotel *c) {
   return;
 }
 
-void inserirInicio (Lista *l, Hotel cadastro) {
+void inserirInicio(Lista *l, Hotel cadastro){
     struct no * novo = (struct no*) malloc (sizeof(struct no));
     novo->cadastro = cadastro;
     novo->prox = l->inicio;
     l->inicio = novo;
 }
 
-void mostrar (Lista l) {
+void mostrar(Lista l){
     struct no * p;
     for (p = l.inicio; p != NULL; p = p->prox) {
         printf("%s %s %s\n", p->cadastro.nome, p->cadastro.localizacao, p->cadastro.avaliacao);

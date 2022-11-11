@@ -36,24 +36,3 @@ void mostrar(Lista l){
         printf("%s %s %s\n", p->cadastro.nome, p->cadastro.localizacao, p->cadastro.avaliacao);
     }
 }
-
-int menu () {
-    printf("\n");
-    printf("MENU INICIAL\n");
-    printf("1- Adicionar hotel\n");
-    printf("2- Remover hotel\n");
-    printf("3- Listar Hoteis cadastrados\n");
-    printf("4- Buscar Hotel\n");
-    printf("5- Editar cadastro\n");
-    printf("6- Consultar quartos disponiveis em um dado hotel\n");
-    printf("7- Consultar quantitativo de quartos por hoteis\n");
-    printf("8- Sair\n");
-
-    printf("Digite a sua opcao: ");
-
-    int op;
-
-    scanf("%d", &op);
-
-    return op;
-}

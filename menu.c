@@ -97,7 +97,7 @@ int main(void) {
         switch(op) {
             case OPCAO1:
                 Beep(1000,500); /* Emite um beep */
-
+            
                 break;
 
             case OPCAO2:

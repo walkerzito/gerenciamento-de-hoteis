@@ -100,7 +100,11 @@ int main(void) {
         op = LeOpcao(OPCAO1, OPCAO1 + N_OPCOES - 1);
         switch(op) {
             case OPCAO1:
-                Beep(1000,500); /* Emite um beep */
+                Beep(1000,500);
+                Hotel c;
+                Lista l;  
+                lerCadastro(&c);              
+                inserirInicio(&l, c);
                 
                 break;
 

@@ -18,8 +18,8 @@ struct lista {
     struct no * inicio;
 };
 
-void lerCadastro(Hotel *c) {
-  scanf("%s %s %s", &c->nome, c->localizacao, c->avaliacao);
+void lerCadastro(Hotel *h) {
+  scanf("%s %s %s", &h->nome, h->localizacao, h->avaliacao);
   return;
 }
 

@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <windows.h>
+//#include <windows.h>
+#include "hotel.h"
+#include "hotel.c"
+#include "quarto.h"
+#include "quarto.c"
 
 #define TITULO_OPCAO1 "Adicionar hotel"
 #define TITULO_OPCAO2 "Remover hotel"
@@ -97,7 +101,7 @@ int main(void) {
         switch(op) {
             case OPCAO1:
                 Beep(1000,500); /* Emite um beep */
-            
+                
                 break;
 
             case OPCAO2:

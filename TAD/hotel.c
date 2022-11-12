@@ -38,11 +38,11 @@ void mostrar(Lista l){
     }
 }
 
-// struct no * pesquisar (Lista *lista, int n) {
-//     struct no* p;
-//     for (p = lista.inicio; p != NULL && p->cadastro.nome != n; p = p->prox);
-//     return p;
-// }
+ struct no * pesquisar (Lista lista, int n) {
+     struct no* p;
+     for (p = lista.inicio; p != NULL && p->cadastro.nome != n; p = p->prox);
+     return p;
+ }
 
 void deletarInicio (Lista *plista) {
     if (plista->inicio == NULL) {

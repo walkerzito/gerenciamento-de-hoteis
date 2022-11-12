@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <locale.h>
 #include <windows.h>
 #include "hotel.c"
 
 int menu () {
     printf("\n");
-    setlocale(LC_ALL, "Portuguese");
-    printf("BP HOTÉIS\n");
+    printf("BP HOTEIS\n");
     printf("1- Adicionar hotel\n");
     printf("2- Remover hotel\n");
     printf("3- Listar hoteis\n");
@@ -57,19 +55,20 @@ int main() {
             mostrar(lista);
         }
 
-        // else if (op == 4) {
-        //     int h;
-        //     printf("Informe o hotel que deseja encontrar: ");
-        //     scanf("%d", &h);
-        //     struct no * p = pesquisar(lista, h);
-        //     if (p != NULL) {
-        //         printf("Hotel encontrado!\n");
-        //         printf("%s %s %s\n", &p->cadastro.nome[0], &p->cadastro.localizacao[0], &p->cadastro.avaliacao[0]);
-        //     }
-        //     else {
-        //         printf("Hotel nao encontrado...\n");
-        //     }
-        // }
+        else if (op == 4) {
+            int h;
+            printf("Informe o hotel que deseja encontrar: ");
+             scanf("%d", &h);
+             struct no * p = pesquisar(lista, h);
+             if (p != NULL) {
+                 printf("Hotel encontrado!\n");
+                 printf("%s %s %s\n", &p->cadastro.nome[0], &p->cadastro.localizacao[0], &p->cadastro.avaliacao[0]);
+             }
+             else {
+                 printf("Hotel nao encontrado...\n");
+             }
+         }
+         
         op = menu();
     }
     return 0;

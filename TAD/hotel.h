@@ -4,3 +4,4 @@ void lerCadastro(Hotel *h);
 void inserirInicio(Lista *l, Hotel cadastro);
 void mostrar(Lista l);
 void deletarInicio (Lista *plista);
+void inserirInicio(Lista *l, Hotel cadastro);

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 
 typedef struct hotel{
     char nome[100];
@@ -36,7 +37,7 @@ void mostrar(Lista l){
     }
 }
 
-// struct no * pesquisar (Lista lista, int n) {
+// struct no * pesquisar (Lista *lista, int n) {
 //     struct no* p;
 //     for (p = lista.inicio; p != NULL && p->cadastro.nome != n; p = p->prox);
 //     return p;
@@ -82,8 +83,9 @@ int main() {
     int op = menu();
 
     while (op != 8) {
-
+        
         if (op == 1) { 
+            Beep(1000,500);
             Hotel c;
             printf("\n");
             printf("Insira os dados do hotel (Nome, Localizacao e Avaliacao):\n");
@@ -92,10 +94,12 @@ int main() {
         }
 
         else if (op == 2) {
+            Beep(1000,500);
             deletarInicio(&lista);
         }
 
         else if (op == 3) {
+            Beep(1000,500);
             printf("\n");
             printf("Mostrando lista de hoteis...\n");
             mostrar(lista);

@@ -75,7 +75,7 @@ int menu () {
     return op;
 }
 
-//Fun��o principal
+//Funcao principal
 int main() {
     Lista lista;
     lista.inicio = NULL;

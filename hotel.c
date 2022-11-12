@@ -110,7 +110,7 @@ int main() {
         //     printf("Informe o hotel que deseja encontrar: ");
         //     scanf("%d", &h);
         //     struct no * p = pesquisar(lista, h);
-        //     if (p != NULL) {
+        //     if (h != NULL) {
         //         printf("Hotel encontrado!\n");
         //         printf("%s %s %s\n", &p->cadastro.nome[0], &p->cadastro.localizacao[0], &p->cadastro.avaliacao[0]);
         //     }

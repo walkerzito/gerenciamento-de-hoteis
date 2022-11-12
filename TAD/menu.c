@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 #include <windows.h>
 #include "hotel.c"
 
 int menu () {
     printf("\n");
-    printf("MENU INICIAL\n");
+    setlocale(LC_ALL, "Portuguese");
+    printf("BP HOTÉIS\n");
     printf("1- Adicionar hotel\n");
     printf("2- Remover hotel\n");
     printf("3- Listar hoteis\n");

@@ -5,6 +5,7 @@
 #include "hotel.h"
 
 struct hotel{
+    int id;
     char nome[100];
     char localizacao[100];
     char avaliacao[100];
@@ -20,7 +21,7 @@ struct lista {
 };
 
 void lerCadastro(Hotel *h) {
-  scanf("%s %s %s", &h->nome[0], &h->localizacao[0], &h->avaliacao[0]);
+  scanf("%d %s %s %s", &h->id, &h->nome[0], &h->localizacao[0], &h->avaliacao[0]);
   return;
 }
 
@@ -34,15 +35,15 @@ void inserirInicio(Lista *l, Hotel cadastro){
 void mostrar(Lista l){
     struct no * p;
     for (p = l.inicio; p != NULL; p = p->prox) {
-        printf("%s %s %s\n", p->cadastro.nome, p->cadastro.localizacao, p->cadastro.avaliacao);
+        printf("%d %s %s %s\n", p->cadastro.id, p->cadastro.nome, p->cadastro.localizacao, p->cadastro.avaliacao);
     }
 }
 
- struct no * pesquisar (Lista lista, int n) {
-     struct no* p;
-     for (p = lista.inicio; p != NULL && p->cadastro.nome != n; p = p->prox);
-     return p;
- }
+struct no * pesquisar (Lista lista, int h) {
+    struct no* pi;
+    for (pi = lista.inicio; pi != NULL && pi->cadastro.id != h; pi = pi->prox);
+    return pi;
+}
 
 void deletarInicio (Lista *plista) {
     if (plista->inicio == NULL) {
@@ -52,5 +53,15 @@ void deletarInicio (Lista *plista) {
         struct no* p = plista->inicio;
         plista->inicio = p->prox;
         free(p);
+    }
+}
+
+void alterar(Lista *plista, int h, char nome[]) {
+    struct no *pi = pesquisar(*plista, h);
+    if(pi == NULL){
+        printf("O hotel nao pode ser alterado!\n");
+    }
+    else{
+        strcpy(pi->cadastro.nome, &nome);
     }
 }

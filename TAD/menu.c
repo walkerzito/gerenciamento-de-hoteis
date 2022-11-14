@@ -38,7 +38,7 @@ int main() {
             Beep(1000,500);
             Hotel c;
             printf("\n");
-            printf("Insira os dados do hotel (Nome, Localizacao e Avaliacao):\n");
+            printf("Insira os dados do hotel (ID, Nome, Localizacao e Avaliacao):\n");
             lerCadastro(&c);
             inserirInicio(&lista, c);
         }
@@ -56,18 +56,29 @@ int main() {
         }
 
         else if (op == 4) {
-            int h;
+            int h=0;
             printf("Informe o hotel que deseja encontrar: ");
              scanf("%d", &h);
-             struct no * p = pesquisar(lista, h);
-             if (p != NULL) {
+             struct no * pi = pesquisar(lista, h);
+             if (pi != NULL) {
                  printf("Hotel encontrado!\n");
-                 printf("%s %s %s\n", &p->cadastro.nome[0], &p->cadastro.localizacao[0], &p->cadastro.avaliacao[0]);
+                 printf("%d %s %s %s\n", pi->cadastro.id, &pi->cadastro.nome, &pi->cadastro.localizacao, &pi->cadastro.avaliacao);
              }
              else {
                  printf("Hotel nao encontrado...\n");
              }
          }
+         
+         else if(op == 5) {
+            int h;
+            char nome[100];
+
+            printf("Digite o nome do hotel: ");
+            scanf("%s", &h);
+            printf("Digite o novo nome do hotel: ");
+            scanf("%s", nome);
+            alterar(&lista, h, nome);
+        }
          
         op = menu();
     }

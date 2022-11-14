@@ -72,12 +72,18 @@ int main() {
          else if(op == 5) {
             int h;
             char nome[100];
+            char localizacao[100];
+            char avaliacao[100];
 
-            printf("Digite o nome do hotel: ");
-            scanf("%s", &h);
+            printf("Digite o ID do hotel: ");
+            scanf("%d", &h);
             printf("Digite o novo nome do hotel: ");
             scanf("%s", nome);
-            alterar(&lista, h, nome);
+            printf("Digite a nova localizacao do hotel: ");
+            scanf("%s", localizacao);
+            printf("Digite a nova avaliacao do hotel: ");
+            scanf("%s", avaliacao);
+            alterar(&lista, h, nome, localizacao, avaliacao);
         }
          
         op = menu();

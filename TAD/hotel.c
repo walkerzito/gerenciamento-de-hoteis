@@ -56,12 +56,14 @@ void deletarInicio (Lista *plista) {
     }
 }
 
-void alterar(Lista *plista, int h, char nome[]) {
+void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliacao[]) {
     struct no *pi = pesquisar(*plista, h);
     if(pi == NULL){
         printf("O hotel nao pode ser alterado!\n");
     }
     else{
-        strcpy(pi->cadastro.nome, &nome);
+        strcpy(pi->cadastro.nome, nome);
+        strcpy(pi->cadastro.localizacao, localizacao);
+        strcpy(pi->cadastro.avaliacao, avaliacao);
     }
 }

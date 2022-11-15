@@ -113,9 +113,9 @@ void disp(Lista *l, int h){
     else{
 
     }
-    }
+}
 
 //Funcão para consultar quantitativo de quartos por hoteis
 void quant(Lista *l, int h){
-    
+
 }

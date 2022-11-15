@@ -40,12 +40,12 @@ int main() {
             printf("\n");
             printf("Insira os dados do hotel (ID, Nome, Localizacao e Avaliacao):\n");
             lerCadastro(&c);
-            inserirInicio(&lista, c);
+            adicionar(&lista, c);
         }
 
         else if (op == 2) {
             Beep(1000,500);
-            deletarInicio(&lista);
+            deletar(&lista);
         }
 
         else if (op == 3) {
@@ -56,8 +56,9 @@ int main() {
         }
 
         else if (op == 4) {
+            Beep(1000,500);
             int h=0;
-            printf("Informe o hotel que deseja encontrar: ");
+            printf("Informe o ID do hotel que deseja encontrar: ");
              scanf("%d", &h);
              struct no * pi = pesquisar(lista, h);
              if (pi != NULL) {
@@ -70,10 +71,12 @@ int main() {
          }
          
          else if(op == 5) {
+            Beep(1000,500);
             int h;
             char nome[100];
             char localizacao[100];
             char avaliacao[100];
+            Hotel *cadastro;
 
             printf("Digite o ID do hotel: ");
             scanf("%d", &h);

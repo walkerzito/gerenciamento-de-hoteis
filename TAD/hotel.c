@@ -32,6 +32,17 @@ void adicionar(Lista *l, Hotel cadastro){
     novo->cadastro = cadastro;
     novo->prox = l->inicio;
     l->inicio = novo;
+
+        FILE *arq = fopen("GerenciamentoDeHoteis.txt", "a");
+    if(arq == NULL){
+        printf("Erro ao abrir o arquivo");
+        exit(1);
+    }
+    fprintf(arq, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", cadastro.id, cadastro.nome, cadastro.localizacao, cadastro.avaliacao);
+
+    fclose(arq);
+    
+    return cadastro;
 }
 
 //Função para mostrar a lista de hoteis
@@ -72,4 +83,21 @@ void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliac
         strcpy(pi->cadastro.localizacao, localizacao);
         strcpy(pi->cadastro.avaliacao, avaliacao);
     }
+
+    FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo");
+        return;
+    }
+
+    FILE *arquivoTemp = fopen("GerenciamentoDeHoteis.txt", "w");
+    if (arquivoTemp == NULL) {
+        printf("Erro ao abrir o arquivo");
+        return;
+    }
+
+    fprintf(arquivoTemp, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", pi->cadastro.id, pi->cadastro.nome, pi->cadastro.localizacao, pi->cadastro.avaliacao);
+
+    fclose(arquivo);
+    fclose(arquivoTemp);
 }

@@ -6,8 +6,8 @@
 #include "quarto.h"
 
 struct hotel{
+    Quarto *quarto;
     int id;
-    char quarto;
     char nome[100];
     char localizacao[100];
     char avaliacao[100];
@@ -102,4 +102,20 @@ void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliac
 
     fclose(arquivo);
     fclose(arquivoTemp);
+}
+
+//Funcão para consultar disponibilidade de quartos em dado hotel
+void disp(Lista *l, int h){
+    struct no *pi = pesquisar(*l, h);
+    if(pi == NULL){
+        printf("O hotel nao pode ser encontrado!\n");
+    }
+    else{
+
+    }
+    }
+
+//Funcão para consultar quantitativo de quartos por hoteis
+void quant(Lista *l, int h){
+    
 }

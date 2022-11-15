@@ -63,7 +63,6 @@ struct no * pesquisar(Lista lista, int h){
 }
 
 //Função para deletar hotel da lista
-<<<<<<< HEAD
 void deletarID(Lista *lista, int id) {
     //Inicio == NULL
     if (lista->inicio == NULL) {
@@ -96,16 +95,6 @@ void deletarID(Lista *lista, int id) {
             pa->prox = pi->prox;
             free(pi);
         }
-=======
-void deletar(Lista *plista){
-    if (plista->inicio == NULL) {
-        printf("Nao foi possivel deletar, a lista esta vazia...\n");
-    }
-    else{
-        struct no* p = plista->inicio;
-        plista->inicio = p->prox;
-        free(p);
->>>>>>> 491e5c64d19ee329c46580ac6e7b97e6ab79e550
     }
 }
 

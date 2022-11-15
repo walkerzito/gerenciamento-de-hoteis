@@ -3,10 +3,10 @@
 #include <string.h>
 #include <windows.h>
 #include "hotel.h"
-#include "quarto.h"
+// #include "quarto.h"
 
 struct hotel{
-    Quarto *quarto;
+    // Quarto *quarto;
     int id;
     char nome[100];
     char localizacao[100];

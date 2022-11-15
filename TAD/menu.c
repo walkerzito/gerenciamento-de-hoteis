@@ -27,7 +27,7 @@ int menu () {
 }
 
 //Funcao principal
-int main() {
+int main(){
     Lista lista;
     lista.inicio = NULL;
 
@@ -44,21 +44,27 @@ int main() {
             adicionar(&lista, c);
         }
 
+<<<<<<< HEAD
         else if (op == 2) {
             int id;
             printf("Informe o registro que deseja excluir: ");
             scanf("%d", &id);
             deletarID(&lista, id);
+=======
+        else if(op == 2){
+            Beep(1000,500);
+            deletar(&lista);
+>>>>>>> 491e5c64d19ee329c46580ac6e7b97e6ab79e550
         }
 
-        else if (op == 3) {
+        else if(op == 3){
             Beep(1000,500);
             printf("\n");
             printf("Mostrando lista de hoteis...\n");
             mostrar(lista);
         }
 
-        else if (op == 4) {
+        else if(op == 4){
             Beep(1000,500);
             int h=0;
             printf("Informe o ID do hotel que deseja encontrar: ");
@@ -73,7 +79,7 @@ int main() {
              }
          }
          
-         else if(op == 5) {
+         else if(op == 5){
             Beep(1000,500);
             int h;
             char nome[100];

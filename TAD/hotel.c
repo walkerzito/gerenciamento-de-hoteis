@@ -63,14 +63,38 @@ struct no * pesquisar (Lista lista, int h) {
 }
 
 //Função para deletar hotel da lista
-void deletar (Lista *plista) {
-    if (plista->inicio == NULL) {
-        printf("Nao foi possivel deletar, a lista esta vazia...\n");
+void deletarID(Lista *lista, int id) {
+    //Inicio == NULL
+    if (lista->inicio == NULL) {
+        printf("Nao e possivel deletar, a lista esta vazia...\n");
     }
+    //Nó se encontra no ínicio
+    else if (lista->inicio->cadastro.id == id) {
+        struct no* pi = lista->inicio;
+        lista->inicio = pi->prox;
+        free(pi);
+    }
+    //Lista tem um único nó, registro não existe
+    else if (lista->inicio->prox == NULL) {
+        if (lista->inicio->cadastro.id != id) {
+            printf("Nao e possivel deletar, o registro nao existe...\n");
+        }
+    }
+    //Lista tem vários nós, registro existe
+    //Lista tem vários nós, registro não existe
     else {
-        struct no* p = plista->inicio;
-        plista->inicio = p->prox;
-        free(p);
+        struct no * pa;
+        struct no * pi;
+        for (pi = lista->inicio; pi != NULL && pi->cadastro.id != id; pi = pi->prox) {
+            pa = pi;
+        }
+        if (pi == NULL) {
+            printf("Nao e possivel deletar, o registro nao existe...\n");
+        }
+        else {
+            pa->prox = pi->prox;
+            free(pi);
+        }
     }
 }
 

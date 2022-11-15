@@ -45,8 +45,10 @@ int main() {
         }
 
         else if (op == 2) {
-            Beep(1000,500);
-            deletar(&lista);
+            int id;
+            printf("Informe o registro que deseja excluir: ");
+            scanf("%d", &id);
+            deletarID(&lista, id);
         }
 
         else if (op == 3) {

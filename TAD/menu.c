@@ -27,7 +27,7 @@ int menu () {
 }
 
 //Funcao principal
-int main() {
+int main(){
     Lista lista;
     lista.inicio = NULL;
 
@@ -44,19 +44,19 @@ int main() {
             adicionar(&lista, c);
         }
 
-        else if (op == 2) {
+        else if(op == 2){
             Beep(1000,500);
             deletar(&lista);
         }
 
-        else if (op == 3) {
+        else if(op == 3){
             Beep(1000,500);
             printf("\n");
             printf("Mostrando lista de hoteis...\n");
             mostrar(lista);
         }
 
-        else if (op == 4) {
+        else if(op == 4){
             Beep(1000,500);
             int h=0;
             printf("Informe o ID do hotel que deseja encontrar: ");
@@ -71,7 +71,7 @@ int main() {
              }
          }
          
-         else if(op == 5) {
+         else if(op == 5){
             Beep(1000,500);
             int h;
             char nome[100];

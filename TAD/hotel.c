@@ -23,7 +23,7 @@ struct lista {
 };
 
 //Função para ler o cadastro
-void lerCadastro(Hotel *h) {
+void lerCadastro(Hotel *h){
   scanf("%d %s %s %s", &h->id, &h->nome[0], &h->localizacao[0], &h->avaliacao[0]);
   return;
 }
@@ -56,18 +56,18 @@ void mostrar(Lista l){
 }
 
 //Função para pesquisar hosteis na lista
-struct no * pesquisar (Lista lista, int h) {
+struct no * pesquisar(Lista lista, int h){
     struct no* pi;
     for (pi = lista.inicio; pi != NULL && pi->cadastro.id != h; pi = pi->prox);
     return pi;
 }
 
 //Função para deletar hotel da lista
-void deletar (Lista *plista) {
+void deletar(Lista *plista){
     if (plista->inicio == NULL) {
         printf("Nao foi possivel deletar, a lista esta vazia...\n");
     }
-    else {
+    else{
         struct no* p = plista->inicio;
         plista->inicio = p->prox;
         free(p);

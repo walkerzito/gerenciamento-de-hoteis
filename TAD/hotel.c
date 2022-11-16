@@ -6,7 +6,7 @@
 #include "quarto.h"
 
 struct hotel{
-    Quarto *quarto;
+    Lista2 *quarto;
     int id;
     char nome[100];
     char localizacao[100];

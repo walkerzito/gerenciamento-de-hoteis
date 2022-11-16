@@ -43,3 +43,4 @@ void adicionar2(Lista2 *l, Quarto cadastro2){
     
     return cadastro2;
 }
+

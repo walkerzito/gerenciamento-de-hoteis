@@ -1,4 +1,0 @@
-ID: 1 
- Nome: lucas
- Localização: alexandria
- Avaliação: bom

@@ -92,12 +92,16 @@ void deletarID(Lista *lista, int id){
             pa->prox = pi->prox;
             free(pi);
             
-    arq = fopen("GerenciamentoDeHoteis", "rw");
+    arq = fopen("GerenciamentoDeHoteis", "r");
     if(arq == NULL){
         printf("Não encontrado\n");
-        exit(1);
     }
-        
+
+    arq = fopen("GerenciamentoDeHoteis", "w");
+    if(arq == NULL){
+        printf("Não encontrado\n");
+    } 
+
     fprintf(arq, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", pi->cadastro.id, pi->cadastro.nome, pi->cadastro.localizacao, pi->cadastro.avaliacao);
 
         fclose(arq);

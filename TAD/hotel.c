@@ -18,7 +18,7 @@ struct no{
     struct no *prox;
 };
 
-struct lista {
+struct lista{
     struct no * inicio;
 };
 
@@ -61,11 +61,11 @@ struct no * pesquisar(Lista lista, int h){
 }
 
 //Função para deletar hotel da lista
-void deletarID(Lista *lista, int id) {
+void deletarID(Lista *lista, int id){
     
     FILE *arq, *arq1;
 
-    if (lista->inicio == NULL) {
+    if(lista->inicio == NULL){
         printf("Nao e possivel deletar, a lista esta vazia...\n");
     }
     else if (lista->inicio->cadastro.id == id) {
@@ -73,32 +73,32 @@ void deletarID(Lista *lista, int id) {
         lista->inicio = pi->prox;
         free(pi);
     }
-    else if (lista->inicio->prox == NULL) {
-        if (lista->inicio->cadastro.id != id) {
+    else if (lista->inicio->prox == NULL){
+        if(lista->inicio->cadastro.id != id){
             printf("Nao e possivel deletar, o registro nao existe...\n");
         }
     }
-    else {
+    else{
         struct no * pa;
         struct no * pi;
         for (pi = lista->inicio; pi != NULL && pi->cadastro.id != id; pi = pi->prox) {
             pa = pi;
         }
-        if (pi == NULL) {
+        if (pi == NULL){
             printf("Nao e possivel deletar, o registro nao existe...\n");
         }
-        else {
+        else{
             pa->prox = pi->prox;
             free(pi);
             
     arq = fopen("GerenciamentoDeHoteis", "r");
-    if (arq == NULL) {
+    if(arq == NULL){
         printf("Não encontrado\n");
         exit(1);
     }
 
     arq1 = fopen("GerenciamentoDeHoteis.txt", "w");
-    if (arq1 == NULL) {
+    if(arq1 == NULL){
         printf("ERRO\n");
         exit(1);
 
@@ -112,7 +112,7 @@ void deletarID(Lista *lista, int id) {
 
 
 //Função para alterar cadastro de hoteis
-void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliacao[]) {
+void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliacao[]){
     struct no *pi = pesquisar(*plista, h);
     if(pi == NULL){
         printf("O hotel nao pode ser alterado!\n");

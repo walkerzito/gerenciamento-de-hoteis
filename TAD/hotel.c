@@ -25,7 +25,6 @@ struct lista {
 //Função para ler o cadastro
 void lerCadastro(Hotel *h){
   scanf("%d %s %s %s", &h->id, &h->nome[0], &h->localizacao[0], &h->avaliacao[0]);
-  return;
 }
 
 //Função para cadastrar hotel
@@ -43,8 +42,7 @@ void adicionar(Lista *l, Hotel cadastro){
     fprintf(arq, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", cadastro.id, cadastro.nome, cadastro.localizacao, cadastro.avaliacao);
 
     fclose(arq);
-    
-    return cadastro;
+
 }
 
 //Função para mostrar a lista de hoteis
@@ -64,24 +62,19 @@ struct no * pesquisar(Lista lista, int h){
 
 //Função para deletar hotel da lista
 void deletarID(Lista *lista, int id) {
-    //Inicio == NULL
     if (lista->inicio == NULL) {
         printf("Nao e possivel deletar, a lista esta vazia...\n");
     }
-    //Nó se encontra no ínicio
     else if (lista->inicio->cadastro.id == id) {
         struct no* pi = lista->inicio;
         lista->inicio = pi->prox;
         free(pi);
     }
-    //Lista tem um único nó, registro não existe
     else if (lista->inicio->prox == NULL) {
         if (lista->inicio->cadastro.id != id) {
             printf("Nao e possivel deletar, o registro nao existe...\n");
         }
     }
-    //Lista tem vários nós, registro existe
-    //Lista tem vários nós, registro não existe
     else {
         struct no * pa;
         struct no * pi;
@@ -94,9 +87,24 @@ void deletarID(Lista *lista, int id) {
         else {
             pa->prox = pi->prox;
             free(pi);
+            
+    FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo");
+
+    }
+
+    FILE *arquivoTemp = fopen("GerenciamentoDeHoteis.txt", "w");
+    if (arquivoTemp == NULL) {
+        printf("Erro ao abrir o arquivo");
+    }
+    
+    fclose(arquivo);
+    fclose(arquivoTemp);
         }
     }
 }
+
 
 //Função para alterar cadastro de hoteis
 void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliacao[]) {
@@ -113,13 +121,13 @@ void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliac
     FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "r");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo");
-        return;
+
     }
 
     FILE *arquivoTemp = fopen("GerenciamentoDeHoteis.txt", "w");
     if (arquivoTemp == NULL) {
         printf("Erro ao abrir o arquivo");
-        return;
+
     }
 
     fprintf(arquivoTemp, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", pi->cadastro.id, pi->cadastro.nome, pi->cadastro.localizacao, pi->cadastro.avaliacao);

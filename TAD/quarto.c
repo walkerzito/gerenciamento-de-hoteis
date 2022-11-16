@@ -23,7 +23,6 @@ struct lista2 {
 
 void lerCadastro2(Quarto *q){
   scanf("%s %f %d", &q->tipo, &q->preco, &q->disp);
-  return;
 }
 
 void adicionar2(Lista2 *l, Quarto cadastro2){
@@ -41,6 +40,5 @@ void adicionar2(Lista2 *l, Quarto cadastro2){
 
     fclose(arq2);
     
-    return cadastro2;
 }
 

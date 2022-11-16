@@ -62,6 +62,9 @@ struct no * pesquisar(Lista lista, int h){
 
 //Função para deletar hotel da lista
 void deletarID(Lista *lista, int id) {
+    
+    FILE *arq, *arq1;
+
     if (lista->inicio == NULL) {
         printf("Nao e possivel deletar, a lista esta vazia...\n");
     }
@@ -88,22 +91,24 @@ void deletarID(Lista *lista, int id) {
             pa->prox = pi->prox;
             free(pi);
             
-    FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "r");
-    if (arquivo == NULL) {
-        printf("Erro ao abrir o arquivo");
-
+    arq = fopen("GerenciamentoDeHoteis", "r");
+    if (arq == NULL) {
+        printf("Não encontrado\n");
+        exit(1);
     }
 
-    FILE *arquivoTemp = fopen("GerenciamentoDeHoteis.txt", "w");
-    if (arquivoTemp == NULL) {
-        printf("Erro ao abrir o arquivo");
+    arq1 = fopen("GerenciamentoDeHoteis.txt", "w");
+    if (arq1 == NULL) {
+        printf("ERRO\n");
+        exit(1);
+
+        fclose(arq);
+        fclose(arq1);
+    }
     }
     
-    fclose(arquivo);
-    fclose(arquivoTemp);
         }
     }
-}
 
 
 //Função para alterar cadastro de hoteis

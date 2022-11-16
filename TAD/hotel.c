@@ -34,7 +34,7 @@ void adicionar(Lista *l, Hotel cadastro){
     novo->prox = l->inicio;
     l->inicio = novo;
 
-        FILE *arq = fopen("GerenciamentoDeHoteis.txt", "a");
+    FILE *arq = fopen("GerenciamentoDeHoteis.txt", "a");
     if(arq == NULL){
         printf("Erro ao abrir o arquivo");
         exit(1);

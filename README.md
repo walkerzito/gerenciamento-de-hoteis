@@ -5,6 +5,7 @@ Projeto da disciplina de Estrutura de Dados I
 UFERSA(Universidade Federal Rural do Semi-Árido)
 
 Discentes: BRUNO VICTOR PAIVA DA SILVA
+
 JOSE LUCAS BATISTA
 
 Docente: ROSANA CIBELY BATISTA RÊGO

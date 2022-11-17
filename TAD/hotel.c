@@ -3,7 +3,6 @@
 #include <string.h>
 #include <windows.h>
 #include "hotel.h"
-//#include "quarto.h"
 
 struct hotel{
     int quartos;
@@ -39,7 +38,7 @@ void adicionar(Lista *l, Hotel cadastro){
         printf("Erro ao abrir o arquivo");
         exit(1);
     }
-    fprintf(arq, "ID: %d \n Nome: %s\n Quartos: %d \n Localização: %s \n Avaliação: %s", cadastro.id, cadastro.nome, cadastro.localizacao, cadastro.avaliacao);
+    fprintf(arq, "ID: %d \n Nome: %s\n Quartos: %d \n Localização: %s \n Avaliação: %s", cadastro.id, cadastro.nome, cadastro.quartos, cadastro.localizacao, cadastro.avaliacao);
 
     fclose(arq);
 
@@ -49,7 +48,7 @@ void adicionar(Lista *l, Hotel cadastro){
 void mostrar(Lista l){
     struct no * p;
     for (p = l.inicio; p != NULL; p = p->prox) {
-        printf("%d %s %s %s\n", p->cadastro.id, p->cadastro.nome, p->cadastro.localizacao, p->cadastro.avaliacao);
+        printf("%d %s %s %s\n", p->cadastro.id, p->cadastro.nome);
     }
 }
 
@@ -62,8 +61,7 @@ struct no * pesquisar(Lista lista, int h){
 
 //Função para deletar hotel da lista
 void deletarID(Lista *lista, int id){
-    
-    FILE *arq;
+
     Hotel cadastro;
 
     if(lista->inicio == NULL){
@@ -92,20 +90,21 @@ void deletarID(Lista *lista, int id){
             pa->prox = pi->prox;
             free(pi);
             
-    arq = fopen("GerenciamentoDeHoteis", "r");
-    if(arq == NULL){
-        printf("Não encontrado\n");
+    FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "a+");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo");
+
     }
 
-    arq = fopen("GerenciamentoDeHoteis", "r");
-    if(arq == NULL){
-        printf("Não encontrado\n");
-    } 
+    FILE *arquivoTemp = fopen("GerenciamentoDeHoteis.txt", "w");
+    if (arquivoTemp == NULL) {
+        printf("Erro ao abrir o arquivo");
 
-    fprintf(arq, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", pi->cadastro.id, pi->cadastro.nome, pi->cadastro.localizacao, pi->cadastro.avaliacao);
-
-        fclose(arq);
     }
+
+    fclose(arquivo);
+    fclose(arquivoTemp);
+}
     }
     
         }
@@ -140,11 +139,11 @@ void alterar(Lista *plista, int h, char nome[], char localizacao[], char avaliac
     fclose(arquivo);
     fclose(arquivoTemp);
 }
-
-//Função para consultar quantitativo de quarto por hoteis
+    
+    //Função para consultar quantitativo de quarto por hoteis
 void quant(Lista l){
     struct no * p;
     for (p = l.inicio; p != NULL; p = p->prox) {
-        printf("%d\n", p->cadastro.quartos);
+        printf("%d", p->cadastro.quartos);
     }
 }

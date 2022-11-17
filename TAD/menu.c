@@ -3,7 +3,6 @@
 #include <string.h>
 #include <windows.h>
 #include "hotel.c"
-//#include "quarto.h"
 
 int menu () {
     printf("\n");
@@ -13,9 +12,8 @@ int menu () {
     printf("3- Listar hoteis\n");
     printf("4- Buscar hotel\n");
     printf("5- Editar cadastro\n");
-    printf("6- Consultar quarto disponiveis em dado hotel\n");
-    printf("7- Consultar quantitativo de quartos por hoteis\n");
-    printf("8- Sair\n");
+    printf("6- Consultar quantitativo de quartos por hoteis\n");
+    printf("7- Sair\n");
 
     printf("Digite a sua opcao: ");
 
@@ -33,7 +31,7 @@ int main() {
 
     int op = menu();
 
-    while (op != 8) {
+    while (op != 7) {
         
         if (op == 1) { 
             Beep(1000,500);

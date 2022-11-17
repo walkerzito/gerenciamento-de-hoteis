@@ -3,7 +3,7 @@
 #include <string.h>
 #include <windows.h>
 #include "hotel.c"
-#include "quarto.h"
+//#include "quarto.h"
 
 int menu () {
     printf("\n");
@@ -39,7 +39,7 @@ int main() {
             Beep(1000,500);
             Hotel c;
             printf("\n");
-            printf("Insira os dados do hotel (ID, Nome, Localizacao e Avaliacao):\n");
+            printf("Insira os dados do hotel (ID, Nome, Localizacao, Quartos e Avaliacao):\n");
             lerCadastro(&c);
             adicionar(&lista, c);
         }
@@ -91,7 +91,22 @@ int main() {
             scanf("%s", avaliacao);
             alterar(&lista, h, nome, localizacao, avaliacao);
         }
-         
+
+        else if(op == 7) {
+            Beep(1000,500);
+            printf("\n");
+            int h=0;
+            printf("Informe o ID do hotel que deseja: ");
+             scanf("%d", &h);
+             struct no * pi = pesquisar(lista, h);
+             if (pi != NULL) {
+                 printf("Quantitade de quartos no hotel:\n");
+                 quant(lista);
+             }
+             else {
+                 printf("Hotel nao encontrado...\n");
+             }
+        }
         op = menu();
     }
     return 0;

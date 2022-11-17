@@ -1,4 +1,24 @@
 ID: 1 
  Nome: lucas
  Localização: alexandria
- Avaliação: bom
+ Avaliação: bomID: 1 
+ Nome: lucas
+ Quartos: 3 
+ Localização: alexandria 
+ Avaliação: bomID: 1 
+ Nome: lucas
+ Quartos: 6355952 
+ Localização: bom 
+ Avaliação: ��`ID: 1 
+ Nome: lucas
+ Quartos: 6355952 
+ Localização: bom 
+ Avaliação: ��`ID: 1 
+ Nome: lucas
+ Quartos: 6355952 
+ Localização: bom 
+ Avaliação: ��`ID: 1 
+ Nome: lucas
+ Quartos: 6355952 
+ Localização: bom 
+ Avaliação: ��`

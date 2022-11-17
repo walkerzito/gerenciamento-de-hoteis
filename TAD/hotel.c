@@ -83,14 +83,8 @@ void deletarID(Lista *lista, int id){
         for (pi = lista->inicio; pi != NULL && pi->cadastro.id != id; pi = pi->prox) {
             pa = pi;
         }
-        if (pi == NULL){
-            printf("Nao e possivel deletar, o registro nao existe...\n");
-        }
-        else{
-            pa->prox = pi->prox;
-            free(pi);
-            
-    FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "a+");
+
+        FILE *arquivo = fopen("GerenciamentoDeHoteis.txt", "a+");
     if (arquivo == NULL) {
         printf("Erro ao abrir o arquivo");
 
@@ -102,8 +96,18 @@ void deletarID(Lista *lista, int id){
 
     }
 
+    fprintf(arquivoTemp, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", pi->cadastro.id, pi->cadastro.nome, pi->cadastro.localizacao, pi->cadastro.avaliacao);
+
     fclose(arquivo);
     fclose(arquivoTemp);
+
+        if (pi == NULL){
+            printf("Nao e possivel deletar, o registro nao existe...\n");
+        }
+        else{
+            pa->prox = pi->prox;
+            free(pi);
+            
 }
     }
     

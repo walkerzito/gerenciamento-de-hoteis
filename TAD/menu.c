@@ -44,7 +44,7 @@ int main() {
 
         else if (op == 2) {
             int id;
-            printf("Informe o registro que deseja excluir: ");
+            printf("Informe o ID do hotel que deseja excluir: ");
             scanf("%d", &id);
             deletarID(&lista, id);
         }

@@ -31,7 +31,7 @@ void adicionar2(Lista2 *l, Quarto cadastro2){
     novo->prox = l->inicio;
     l->inicio = novo;
 
-        FILE *arq2 = fopen("Quartos.txt", "a");
+    FILE *arq2 = fopen("Quartos.txt", "a");
     if(arq2 == NULL){
         printf("Erro ao abrir o arquivo");
         exit(1);

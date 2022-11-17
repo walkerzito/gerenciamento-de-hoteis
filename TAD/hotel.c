@@ -9,6 +9,7 @@ struct hotel{
     Lista2 *quarto;
     int id;
     char nome[100];
+    int NQuartos; //numero de quartos
     char localizacao[100];
     char avaliacao[100];
 };
@@ -39,7 +40,7 @@ void adicionar(Lista *l, Hotel cadastro){
         printf("Erro ao abrir o arquivo");
         exit(1);
     }
-    fprintf(arq, "ID: %d \n Nome: %s\n Localização: %s\n Avaliação: %s", cadastro.id, cadastro.nome, cadastro.localizacao, cadastro.avaliacao);
+    fprintf(arq, "ID: %d \n Nome: %s\n Quartos: %d\n Localização: %s\n Avaliação: %s", cadastro.id, cadastro.nome, cadastro.NQuartos, cadastro.localizacao, cadastro.avaliacao);
 
     fclose(arq);
 
@@ -154,5 +155,7 @@ void disp(Lista *l, int h){
 
 //Funcão para consultar quantitativo de quartos por hoteis
 void quant(Lista *l, int h){
-
+    struct no *p;
+    for(p = l->inicio; p != NULL; p = p->prox){
+        print("%d\n", p->cadastro.NQuartos);
 }

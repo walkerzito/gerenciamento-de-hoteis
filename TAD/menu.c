@@ -3,7 +3,7 @@
 #include <string.h>
 #include <windows.h>
 #include "hotel.c"
-// #include "quarto.h"
+#include "quarto.h"
 
 int menu () {
     printf("\n");
